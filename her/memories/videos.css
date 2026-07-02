@@ -1,0 +1,307 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#14071d;
+
+    position:relative;
+
+}
+
+/* ===========================
+   BACKGROUND
+=========================== */
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    radial-gradient(circle at top,#ff5ba0,#44114f,#120512);
+
+    z-index:-2;
+
+}
+
+/* ===========================
+   FLOATING HEARTS
+=========================== */
+
+.hearts{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+}
+
+.hearts span{
+
+    position:absolute;
+
+    bottom:-100px;
+
+    font-size:28px;
+
+    animation:floatHeart 10s linear infinite;
+
+}
+
+.hearts span:nth-child(1){left:8%;animation-delay:0s;}
+.hearts span:nth-child(2){left:28%;animation-delay:2s;}
+.hearts span:nth-child(3){left:52%;animation-delay:4s;}
+.hearts span:nth-child(4){left:72%;animation-delay:1s;}
+.hearts span:nth-child(5){left:90%;animation-delay:5s;}
+
+@keyframes floatHeart{
+
+    from{
+
+        transform:translateY(0) rotate(0);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:translateY(-120vh) rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.container{
+
+    width:100%;
+
+    max-width:1100px;
+
+    padding:25px;
+
+    text-align:center;
+
+}
+
+.container h1{
+
+    color:white;
+
+    font-size:48px;
+
+    text-shadow:0 0 18px hotpink;
+
+    margin-bottom:30px;
+
+}
+
+/* ===========================
+   TOP
+=========================== */
+
+.top{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:25px;
+
+    margin-bottom:35px;
+
+}
+
+.teddy{
+
+    width:180px;
+
+    animation:wave 2s infinite;
+
+}
+
+@keyframes wave{
+
+    0%,100%{
+
+        transform:rotate(0);
+
+    }
+
+    50%{
+
+        transform:rotate(5deg);
+
+    }
+
+}
+
+.bubble{
+
+    width:360px;
+
+    background:white;
+
+    color:#333;
+
+    padding:22px;
+
+    border-radius:25px;
+
+    text-align:left;
+
+}
+
+.bubble p{
+
+    min-height:90px;
+
+    line-height:1.7;
+
+}
+
+/* ===========================
+   VIDEO
+=========================== */
+
+.videoArea{
+
+    margin-top:20px;
+
+}
+
+video{
+
+    width:100%;
+
+    max-width:700px;
+
+    border-radius:20px;
+
+    box-shadow:0 0 30px rgba(255,255,255,.25);
+
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+#nextVideo{
+
+    margin-top:30px;
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:35px;
+
+    background:hotpink;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+#nextVideo:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:768px){
+
+    body{
+
+        overflow:auto;
+
+    }
+
+    .container{
+
+        padding:20px;
+
+    }
+
+    .container h1{
+
+        font-size:30px;
+
+    }
+
+    .top{
+
+        flex-direction:column;
+
+    }
+
+    .teddy{
+
+        width:140px;
+
+    }
+
+    .bubble{
+
+        width:100%;
+
+        max-width:330px;
+
+    }
+
+    video{
+
+        width:100%;
+
+    }
+
+}

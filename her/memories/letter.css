@@ -1,0 +1,352 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:#0d0612;
+
+    position:relative;
+
+}
+
+/* ===========================
+   BACKGROUND
+=========================== */
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    radial-gradient(circle at top,#ff6ba8,#4d1d5d,#120712);
+
+    z-index:-2;
+
+}
+
+/* ===========================
+   FLOATING HEARTS
+=========================== */
+
+.hearts{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+}
+
+.hearts span{
+
+    position:absolute;
+
+    bottom:-80px;
+
+    font-size:28px;
+
+    animation:floatHeart 10s linear infinite;
+
+}
+
+.hearts span:nth-child(1){left:8%;animation-delay:0s;}
+.hearts span:nth-child(2){left:24%;animation-delay:2s;}
+.hearts span:nth-child(3){left:42%;animation-delay:4s;}
+.hearts span:nth-child(4){left:60%;animation-delay:1s;}
+.hearts span:nth-child(5){left:78%;animation-delay:5s;}
+.hearts span:nth-child(6){left:92%;animation-delay:3s;}
+
+@keyframes floatHeart{
+
+    from{
+
+        transform:translateY(0) rotate(0deg);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:translateY(-120vh) rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.container{
+
+    text-align:center;
+
+    padding:20px;
+
+}
+
+.container h1{
+
+    color:white;
+
+    font-size:50px;
+
+    text-shadow:0 0 18px hotpink;
+
+    margin-bottom:35px;
+
+}
+
+/* ===========================
+   ENVELOPE
+=========================== */
+
+.envelope{
+
+    width:260px;
+
+    height:170px;
+
+    margin:auto;
+
+    position:relative;
+
+    cursor:pointer;
+
+    transition:.5s;
+
+}
+
+.body{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    background:#ff8fb8;
+
+    border-radius:8px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.4);
+
+}
+
+.top{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    background:#ff5f98;
+
+    clip-path:polygon(0 0,100% 0,50% 55%);
+
+    transform-origin:top;
+
+    transition:.8s;
+
+    z-index:5;
+
+}
+
+.envelope.open .top{
+
+    transform:rotateX(180deg);
+
+}
+
+.clickText{
+
+    color:white;
+
+    margin-top:20px;
+
+    font-size:18px;
+
+}
+
+/* ===========================
+   LETTER
+=========================== */
+
+.letter{
+
+    width:90%;
+
+    max-width:700px;
+
+    margin:35px auto;
+
+    background:white;
+
+    color:#333;
+
+    border-radius:18px;
+
+    padding:35px;
+
+    display:none;
+
+    animation:pop .8s ease;
+
+}
+
+@keyframes pop{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(80px) scale(.8);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0) scale(1);
+
+    }
+
+}
+
+.letter h2{
+
+    font-family:'Dancing Script',cursive;
+
+    color:#ff2f82;
+
+    font-size:42px;
+
+    margin-bottom:20px;
+
+}
+
+#letterText{
+
+    text-align:left;
+
+    line-height:1.8;
+
+    white-space:pre-line;
+
+    min-height:180px;
+
+}
+
+#continueBtn{
+
+    margin-top:25px;
+
+    padding:14px 32px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#ff3f84;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+    display:none;
+
+}
+
+#continueBtn:hover{
+
+    transform:scale(1.05);
+
+    background:#ff1468;
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:768px){
+
+    body{
+
+        overflow:auto;
+
+    }
+
+    .container h1{
+
+        font-size:34px;
+
+    }
+
+    .envelope{
+
+        width:220px;
+
+        height:145px;
+
+    }
+
+    .letter{
+
+        padding:22px;
+
+    }
+
+    .letter h2{
+
+        font-size:32px;
+
+    }
+
+    #letterText{
+
+        font-size:15px;
+
+    }
+
+}

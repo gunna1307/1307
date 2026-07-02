@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday MR SB</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<!-- Background -->
+
+<div class="bg"></div>
+<div class="overlay"></div>
+
+<!-- Floating Emojis -->
+
+<div class="floating">
+
+    <span>🎂</span>
+    <span>🍫</span>
+    <span>🎁</span>
+    <span>✨</span>
+    <span>🎈</span>
+    <span>🎉</span>
+    <span>💖</span>
+
+</div>
+
+<!-- Main Container -->
+
+<div class="container">
+
+    <h1>HAPPY BIRTHDAY</h1>
+
+    <h2>MR SB !!</h2>
+
+    <div class="card">
+
+        <p class="title">
+            Enter Password 🔐
+        </p>
+
+        <!-- Password Boxes -->
+
+        <div class="otp">
+
+            <input class="box" readonly>
+            <input class="box" readonly>
+            <input class="box" readonly>
+            <input class="box" readonly>
+
+        </div>
+
+        <!-- Keypad -->
+
+        <div class="keypad">
+
+            <button onclick="addDigit('1')">1</button>
+            <button onclick="addDigit('2')">2</button>
+            <button onclick="addDigit('3')">3</button>
+
+            <button onclick="addDigit('4')">4</button>
+            <button onclick="addDigit('5')">5</button>
+            <button onclick="addDigit('6')">6</button>
+
+            <button onclick="addDigit('7')">7</button>
+            <button onclick="addDigit('8')">8</button>
+            <button onclick="addDigit('9')">9</button>
+
+            <button onclick="removeDigit()">⌫</button>
+            <button onclick="addDigit('0')">0</button>
+            <button onclick="checkPassword()">✓</button>
+
+        </div>
+
+        <p id="result"></p>
+
+    </div>
+
+</div>
+
+<!-- Teddy Section -->
+
+<div id="teddySection">
+
+    <img
+        src="teddy.png.png"
+        alt="Teddy"
+        class="teddy"
+    >
+
+    <div class="bubble">
+
+        <p id="typewriter"></p>
+
+        <button id="nextBtn">
+            🎁 Let's Go
+        </button>
+
+    </div>
+
+</div>
+
+<!-- Sounds -->
+
+<audio id="bgMusic" loop>
+    <source src="sounds/bg-music.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="keySound">
+    <source src="sounds/key.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="successSound">
+    <source src="sounds/success.mp3.wav" type="audio/wav">
+</audio>
+
+<audio id="typingSound">
+    <source src="sounds/typing.wav" type="audio/wav">
+</audio>
+
+<script src="script.js"></script>
+
+</body>
+</html>

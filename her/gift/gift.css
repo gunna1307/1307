@@ -1,0 +1,714 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    overflow:hidden;
+
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#090909;
+
+}
+
+/* ===========================
+   BACKGROUND
+=========================== */
+
+.background{
+
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(circle at top,#ff5ca8 0%,#2a163d 35%,#090909 100%);
+
+    z-index:-3;
+
+}
+
+.overlay{
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.35);
+
+    backdrop-filter:blur(2px);
+
+    z-index:-2;
+
+}
+
+/* ===========================
+   MAIN CONTAINER
+=========================== */
+
+.container{
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+}
+
+h1{
+
+    color:white;
+
+    font-size:58px;
+
+    font-weight:700;
+
+    text-shadow:
+    0 0 20px hotpink,
+    0 0 40px hotpink;
+
+}
+
+.subtitle{
+
+    color:white;
+
+    margin-top:15px;
+
+    font-size:20px;
+
+    opacity:.9;
+
+    margin-bottom:60px;
+
+}
+
+/* ===========================
+   GIFT BOX
+=========================== */
+
+#giftBox{
+
+    position:relative;
+
+    width:220px;
+
+    height:220px;
+
+    cursor:pointer;
+
+    animation:giftShake 2s infinite;
+
+}
+
+.box{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:220px;
+
+    height:150px;
+
+    background:#ff4f81;
+
+    border-radius:12px;
+
+    box-shadow:
+    0 15px 30px rgba(0,0,0,.4);
+
+}
+
+.lid{
+
+    position:absolute;
+
+    top:40px;
+
+    width:240px;
+
+    left:-10px;
+
+    height:45px;
+
+    background:#ff6ea8;
+
+    border-radius:10px;
+
+    transition:1s;
+
+    z-index:5;
+
+}
+
+.ribbon-v{
+
+    position:absolute;
+
+    left:98px;
+
+    width:24px;
+
+    height:200px;
+
+    background:white;
+
+    z-index:3;
+
+}
+
+.ribbon-h{
+
+    position:absolute;
+
+    top:82px;
+
+    width:220px;
+
+    height:20px;
+
+    background:white;
+
+    z-index:3;
+
+}
+
+#giftBox::before{
+
+    content:"🎀";
+
+    position:absolute;
+
+    top:0;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:65px;
+
+    z-index:10;
+
+}
+
+/* ===========================
+   CLICK TEXT
+=========================== */
+
+#clickText{
+
+    color:white;
+
+    margin-top:35px;
+
+    font-size:22px;
+
+    animation:blink 1.5s infinite;
+
+}
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+
+@keyframes blink{
+
+    50%{
+
+        opacity:.4;
+
+    }
+
+}
+
+@keyframes giftShake{
+
+    0%,100%{
+
+        transform:rotate(0deg);
+
+    }
+
+    20%{
+
+        transform:rotate(-5deg);
+
+    }
+
+    40%{
+
+        transform:rotate(5deg);
+
+    }
+
+    60%{
+
+        transform:rotate(-3deg);
+
+    }
+
+    80%{
+
+        transform:rotate(3deg);
+
+    }
+
+}
+/* ===========================
+   CAKE SECTION
+=========================== */
+
+#cakeSection{
+
+    display:none;
+
+    margin-top:40px;
+
+    animation:cakeAppear 1.2s ease forwards;
+
+}
+
+.cake{
+
+    width:280px;
+    max-width:80vw;
+
+    filter:
+    drop-shadow(0 0 20px #ffb6d9)
+    drop-shadow(0 0 45px #ff69b4);
+
+    animation:
+    cakeBounce 2s infinite;
+}
+
+@keyframes cakeAppear{
+
+    0%{
+
+        opacity:0;
+        transform:scale(.2) translateY(200px);
+
+    }
+
+    100%{
+
+        opacity:1;
+        transform:scale(1) translateY(0);
+
+    }
+
+}
+
+@keyframes cakeBounce{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+}
+
+/* ===========================
+   TEDDY SECTION
+=========================== */
+
+#teddySection{
+
+    display:none;
+
+    margin-top:30px;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:25px;
+
+    animation:teddyEntry 1s ease;
+
+}
+
+.teddy{
+
+    width:220px;
+
+    animation:
+    teddyWave 2.5s infinite;
+
+}
+
+@keyframes teddyEntry{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateX(-250px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateX(0);
+
+    }
+
+}
+
+@keyframes teddyWave{
+
+    0%,100%{
+
+        transform:rotate(0deg);
+
+    }
+
+    25%{
+
+        transform:rotate(-5deg);
+
+    }
+
+    75%{
+
+        transform:rotate(5deg);
+
+    }
+
+}
+
+/* ===========================
+   SPEECH BUBBLE
+=========================== */
+
+.bubble{
+
+    width:320px;
+
+    background:white;
+
+    padding:22px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 15px 30px rgba(0,0,0,.3);
+
+    animation:bubblePop .8s ease;
+
+}
+
+.bubble p{
+
+    color:#333;
+
+    font-size:18px;
+
+    line-height:1.6;
+
+    min-height:90px;
+
+}
+
+@keyframes bubblePop{
+
+    from{
+
+        transform:scale(0);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+#nextBtn{
+
+    margin-top:20px;
+
+    padding:14px 30px;
+
+    border:none;
+
+    border-radius:35px;
+
+    background:#ff4f81;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    display:none;
+
+}
+
+#nextBtn:hover{
+
+    transform:scale(1.08);
+
+    background:#ff2d6f;
+
+}
+
+/* ===========================
+   HEARTS
+=========================== */
+
+.hearts{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+}
+
+.hearts span{
+
+    position:absolute;
+
+    bottom:-100px;
+
+    font-size:28px;
+
+    animation:heartFloat 8s linear infinite;
+
+}
+
+.hearts span:nth-child(1){left:8%;animation-delay:0s;}
+.hearts span:nth-child(2){left:22%;animation-delay:1s;}
+.hearts span:nth-child(3){left:40%;animation-delay:2s;}
+.hearts span:nth-child(4){left:58%;animation-delay:3s;}
+.hearts span:nth-child(5){left:74%;animation-delay:4s;}
+.hearts span:nth-child(6){left:90%;animation-delay:5s;}
+
+@keyframes heartFloat{
+
+    0%{
+
+        transform:
+        translateY(0) scale(.5);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:
+        translateY(-120vh)
+        rotate(360deg)
+        scale(1.2);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ===========================
+   SPARKLES
+=========================== */
+
+.sparkles{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+}
+
+.sparkles span{
+
+    position:absolute;
+
+    font-size:24px;
+
+    animation:sparkle 2s infinite alternate;
+
+}
+
+.sparkles span:nth-child(1){top:15%;left:15%;}
+.sparkles span:nth-child(2){top:30%;right:15%;}
+.sparkles span:nth-child(3){bottom:30%;left:20%;}
+.sparkles span:nth-child(4){bottom:20%;right:20%;}
+.sparkles span:nth-child(5){top:55%;left:50%;}
+.sparkles span:nth-child(6){top:70%;right:35%;}
+
+@keyframes sparkle{
+
+    from{
+
+        opacity:.4;
+
+        transform:scale(.8);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1.4);
+
+    }
+
+}
+
+/* ===========================
+   CONFETTI
+=========================== */
+
+#confetti{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+}
+
+/* ===========================
+   MOBILE RESPONSIVE
+=========================== */
+
+@media (max-width:768px){
+
+    body{
+        overflow-y:auto;
+    }
+
+    .container{
+        padding:30px 15px;
+        height:auto;
+        min-height:100vh;
+    }
+
+    h1{
+        font-size:34px;
+        line-height:1.2;
+    }
+
+    .subtitle{
+        font-size:16px;
+        margin-bottom:30px;
+    }
+
+    #giftBox{
+        transform:scale(.75);
+    }
+
+    .cake{
+        width:220px;
+        max-width:90%;
+    }
+
+    #teddySection{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .teddy{
+        width:180px;
+    }
+
+    .bubble{
+        width:95%;
+        max-width:350px;
+        padding:18px;
+    }
+
+    .bubble p{
+        font-size:16px;
+    }
+
+    #nextBtn{
+        width:100%;
+    }
+
+}
+
+@keyframes fall{
+
+    from{
+
+        transform:
+        translateY(-50px)
+        rotate(0deg);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:
+        translateY(120vh)
+        rotate(720deg);
+
+        opacity:0;
+
+    }
+
+}

@@ -1,0 +1,391 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    width:100%;
+    min-height:100vh;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at top,#4a124f,#17081f 60%,#0d0612);
+
+    color:white;
+
+    position:relative;
+}
+
+/* ===========================
+   FLOATING EMOJIS
+=========================== */
+
+.floating{
+
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+}
+
+.floating span{
+
+    position:absolute;
+    bottom:-60px;
+    font-size:28px;
+
+    animation:float 12s linear infinite;
+}
+
+.floating span:nth-child(1){left:6%;animation-delay:0s;}
+.floating span:nth-child(2){left:18%;animation-delay:2s;}
+.floating span:nth-child(3){left:32%;animation-delay:5s;}
+.floating span:nth-child(4){left:46%;animation-delay:1s;}
+.floating span:nth-child(5){left:60%;animation-delay:6s;}
+.floating span:nth-child(6){left:74%;animation-delay:3s;}
+.floating span:nth-child(7){left:86%;animation-delay:8s;}
+.floating span:nth-child(8){left:95%;animation-delay:4s;}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
+    }
+
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.container{
+
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    padding:30px;
+}
+
+/* ===========================
+   HEADING
+=========================== */
+
+h1{
+
+    font-size:60px;
+    font-weight:800;
+
+    color:white;
+
+    text-shadow:
+    0 0 18px hotpink;
+
+}
+
+h2{
+
+    margin-top:8px;
+
+    color:#ffd8ea;
+
+    font-size:18px;
+
+    font-weight:400;
+
+}
+
+/* ===========================
+   TEDDY AREA
+=========================== */
+
+.teddyArea{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:25px;
+
+    margin-top:40px;
+
+}
+
+.teddy{
+
+    width:190px;
+
+    animation:wave 2s infinite;
+
+    filter:drop-shadow(0 0 20px hotpink);
+
+}
+
+@keyframes wave{
+
+    0%,100%{
+
+        transform:rotate(0deg);
+
+    }
+
+    25%{
+
+        transform:rotate(-5deg);
+
+    }
+
+    75%{
+
+        transform:rotate(5deg);
+
+    }
+
+}
+
+/* ===========================
+   SPEECH BUBBLE
+=========================== */
+
+.bubble{
+
+    width:350px;
+
+    padding:25px;
+
+    background:white;
+
+    color:#333;
+
+    border-radius:25px;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.35);
+
+}
+
+.bubble p{
+
+    line-height:1.7;
+
+    min-height:90px;
+
+    font-size:17px;
+
+}
+/* ===========================
+   CARDS
+=========================== */
+
+.cards{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:35px;
+
+    margin-top:45px;
+
+    flex-wrap:wrap;
+
+}
+
+.card{
+
+    width:300px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    border-radius:28px;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    transition:.4s;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 0 30px rgba(255,105,180,.18);
+
+}
+
+.card:hover{
+
+    transform:
+    translateY(-10px)
+    scale(1.04);
+
+    box-shadow:
+    0 0 35px hotpink;
+
+}
+
+.emoji{
+
+    font-size:65px;
+
+    margin-bottom:15px;
+
+}
+
+.card h3{
+
+    font-size:28px;
+
+    margin-bottom:10px;
+
+}
+
+.card p{
+
+    color:#f4d8e9;
+
+    line-height:1.6;
+
+    min-height:65px;
+
+}
+
+.card button{
+
+    margin-top:22px;
+
+    padding:12px 30px;
+
+    border:none;
+
+    border-radius:35px;
+
+    background:hotpink;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.card button:hover{
+
+    transform:scale(1.08);
+
+    background:#ff2d87;
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:768px){
+
+    body{
+
+        overflow:auto;
+
+    }
+
+    .container{
+
+        padding:25px 18px;
+
+    }
+
+    h1{
+
+        font-size:38px;
+
+        text-align:center;
+
+    }
+
+    h2{
+
+        text-align:center;
+
+        font-size:15px;
+
+    }
+
+    .teddyArea{
+
+        flex-direction:column;
+
+        margin-top:25px;
+
+    }
+
+    .teddy{
+
+        width:150px;
+
+    }
+
+    .bubble{
+
+        width:100%;
+
+        max-width:330px;
+
+        padding:18px;
+
+    }
+
+    .bubble p{
+
+        font-size:15px;
+
+    }
+
+    .cards{
+
+        flex-direction:column;
+
+        gap:20px;
+
+        margin-top:30px;
+
+    }
+
+    .card{
+
+        width:100%;
+
+        max-width:330px;
+
+    }
+
+}

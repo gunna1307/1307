@@ -1,0 +1,314 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:#111;
+
+}
+
+/* ===========================
+   BACKGROUND
+=========================== */
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    radial-gradient(circle at top,#ff5fa2,#34103d,#0b0710);
+
+    z-index:-3;
+
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.container{
+
+    width:100%;
+
+    text-align:center;
+
+    padding:20px;
+
+}
+
+.container h1{
+
+    color:white;
+
+    font-size:45px;
+
+    text-shadow:0 0 20px hotpink;
+
+    margin-bottom:35px;
+
+}
+
+/* ===========================
+   PHOTO BOX
+=========================== */
+
+.photoBox{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:30px;
+
+}
+
+.photoFrame{
+
+    width:340px;
+
+    background:white;
+
+    padding:12px 12px 55px;
+
+    border-radius:10px;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.4);
+
+    transform:rotate(-2deg);
+
+    transition:.5s;
+
+}
+
+.photoFrame:hover{
+
+    transform:
+    rotate(0deg)
+    scale(1.03);
+
+}
+
+.photoFrame img{
+
+    width:100%;
+
+    height:420px;
+
+    object-fit:cover;
+
+    border-radius:6px;
+
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+button{
+
+    width:65px;
+
+    height:65px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:white;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:scale(1.1);
+
+    background:hotpink;
+
+    color:white;
+
+}
+
+/* ===========================
+   COUNTER
+=========================== */
+
+#counter{
+
+    color:white;
+
+    margin-top:30px;
+
+    font-size:22px;
+
+}
+/* ===========================
+   FLOATING HEARTS
+=========================== */
+
+.hearts{
+
+    position:fixed;
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+}
+
+.hearts span{
+
+    position:absolute;
+
+    bottom:-100px;
+
+    font-size:28px;
+
+    animation:floatHeart 10s linear infinite;
+
+}
+
+.hearts span:nth-child(1){left:8%;animation-delay:0s;}
+.hearts span:nth-child(2){left:20%;animation-delay:2s;}
+.hearts span:nth-child(3){left:35%;animation-delay:5s;}
+.hearts span:nth-child(4){left:50%;animation-delay:1s;}
+.hearts span:nth-child(5){left:65%;animation-delay:4s;}
+.hearts span:nth-child(6){left:80%;animation-delay:7s;}
+.hearts span:nth-child(7){left:92%;animation-delay:3s;}
+
+@keyframes floatHeart{
+
+    0%{
+
+        transform:translateY(0) rotate(0deg);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translateY(-120vh) rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ===========================
+   PHOTO CHANGE ANIMATION
+=========================== */
+
+.photoFrame img{
+
+    animation:fadePhoto .6s ease;
+
+}
+
+@keyframes fadePhoto{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.92);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:768px){
+
+    .container h1{
+
+        font-size:28px;
+
+        margin-bottom:25px;
+
+    }
+
+    .photoBox{
+
+        gap:12px;
+
+    }
+
+    .photoFrame{
+
+        width:230px;
+
+        padding:10px 10px 40px;
+
+    }
+
+    .photoFrame img{
+
+        height:300px;
+
+    }
+
+    button{
+
+        width:48px;
+
+        height:48px;
+
+        font-size:22px;
+
+    }
+
+    #counter{
+
+        font-size:18px;
+
+    }
+
+}
